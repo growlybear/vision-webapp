@@ -10,4 +10,11 @@ describe("vision heartbeat api", function () {
         });
     });
 
+    describe("when requesting resource '/missing'", function () {
+        it("should respond with a 404 response code", function (done) {
+            request(app).get('/missing')
+                .expect('Content-Type', /json/)
+                .expect(404, done);
+        });
+    });
 });
