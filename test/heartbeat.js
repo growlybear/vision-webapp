@@ -7,6 +7,7 @@ describe("vision heartbeat api", function () {
             request(app).get('/heartbeat')
                 .expect('Content-Type', /json/)
                 .expect(200, done);
-        })
-    })
+        });
+    });
+
 });
