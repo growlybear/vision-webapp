@@ -1,3 +1,6 @@
 npm-debug.log
 
+coverage.html
+
 node_modules
+lib-cov
