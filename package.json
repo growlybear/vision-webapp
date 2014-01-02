@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/growlybear/vision-webapp/issues"
   },
-  "homepage": "https://github.com/growlybear/vision-webapp"
+  "homepage": "https://github.com/growlybear/vision-webapp",
+  "dependencies": {
+    "express": "~3.4.7"
+  }
 }
