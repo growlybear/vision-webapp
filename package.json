@@ -1,0 +1,19 @@
+{
+  "name": "vision-webapp",
+  "version": "0.0.1",
+  "description": "Sample app for Advanced Express Web Application Development",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/growlybear/vision-webapp.git"
+  },
+  "author": "Michael Allan <michaelallan@optushome.com.au>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/growlybear/vision-webapp/issues"
+  },
+  "homepage": "https://github.com/growlybear/vision-webapp"
+}
