@@ -7,3 +7,5 @@ NOTE: ```logs/run.log``` (outside of version control) MUST exist at the root lev
     to Production for the first time, or the application will CRASH.
 
 FIXME: crashing behaviour above
+
+NOTE: GITHUB_VISION_TOKEN needs to exist in process.env
