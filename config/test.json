@@ -5,5 +5,8 @@
     "logger": {
         "filename": "logs/run.log",
         "level": "silly"
+    },
+    "mongo": {
+        "url": "mongodb://localhost/vision"
     }
 }
