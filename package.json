@@ -28,6 +28,7 @@
     "mocha": "~1.16.2",
     "supertest": "~0.8.2",
     "grunt": "~0.4.2",
-    "grunt-jscoverage": "0.0.3"
+    "grunt-jscoverage": "0.0.3",
+    "grunt-env": "~0.4.1"
   }
 }
