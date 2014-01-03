@@ -14,6 +14,40 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
+    env: {
+      test: {
+        NODE_ENV: 'TEST'
+      },
+      coverage: {
+        NODE_ENV: 'COVERAGE'
+      }
+    },
+    cafemocha: {
+      test: {
+        src: 'test/*.js',
+        options: {
+          ui: 'bdd',
+          reporter: 'spec'
+        }
+      },
+      coverage: {
+        src: 'test/*.js',
+        options: {
+          ui: 'bdd',
+          reporter: 'html-cov',
+          coverage: {
+            output: 'coverage.html'
+          }
+        }
+      }
+    },
+    jscoverage: {
+      options: {
+        inputDirectory: 'lib',
+        outputDirectory: 'lib-cov',
+        highlight: false
+      }
+    },
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -75,5 +109,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('test', ['env:test', 'cafemocha:test']);
+  grunt.registerTask('coverage', ['env:coverage', 'jscoverage', 'cafemocha:coverage']);
 
 };
