@@ -101,6 +101,6 @@ describe("Vision project API", function () {
             request(app)
                 .del('/project/' + id)
                 .expect(204, done);
-        })
-    })
+        });
+    });
 });
