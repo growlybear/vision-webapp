@@ -123,7 +123,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint']);
   grunt.registerTask('test', ['env:test', 'cafemocha:test']);
   grunt.registerTask('coverage', ['env:coverage', 'jscoverage', 'cafemocha:coverage']);
 
