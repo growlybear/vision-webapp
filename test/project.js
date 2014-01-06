@@ -29,6 +29,25 @@ describe("Vision project API", function () {
         });
     });
 
+    describe("when requesting a list of all projects", function () {
+        it("should respond with 200", function (done) {
+            request(app).get('/project/?user=' + login.user)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end(function (err, res) {
+                    var proj = _.first(JSON.parse(res.text));
+
+                    assert(_.has(proj, '_id'));
+                    assert(_.has(proj, 'name'));
+                    assert(_.has(proj, 'user'));
+                    assert(_.has(proj, 'token'));
+                    assert(_.has(proj, 'created'));
+                    assert(_.has(proj, 'repositories'));
+
+                    done();
+                });
+        });
+    });
 
     describe("when creating a new resource '/project'", function () {
         var project = {
