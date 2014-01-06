@@ -1,4 +1,5 @@
-/*global module:false*/
+/*jshint camelcase:false */
+
 module.exports = function(grunt) {
 
   // Load all grunt tasks matching the 'grunt-*' pattern
@@ -69,6 +70,7 @@ module.exports = function(grunt) {
     },
     jshint: {
       options: {
+        camelcase: true,
         curly: true,
         eqeqeq: true,
         immed: true,
@@ -81,8 +83,24 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
+        // NOTE Suppressing this warning allows us to write
+        // single-line conditionals for compact error-handling
+        '-W116': true,
         globals: {
-          jQuery: true
+          jQuery: true,
+          require: true,
+          __dirname: true,
+          __filename: true,
+          console: true,
+          module: true,
+          exports: true,
+          process: true,
+          describe: true,
+          it: true,
+          before: true,
+          beforeEach: true,
+          after: true,
+          afterEach: true
         }
       },
       gruntfile: {
@@ -91,9 +109,6 @@ module.exports = function(grunt) {
       lib_test: {
         src: ['lib/**/*.js', 'test/**/*.js']
       }
-    },
-    qunit: {
-      files: ['test/**/*.html']
     },
     watch: {
       gruntfile: {
@@ -108,7 +123,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
   grunt.registerTask('test', ['env:test', 'cafemocha:test']);
   grunt.registerTask('coverage', ['env:coverage', 'jscoverage', 'cafemocha:coverage']);
 

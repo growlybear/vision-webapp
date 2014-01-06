@@ -13,6 +13,8 @@ describe("Vision project API", function () {
     beforeEach(function (done) {
 
         mongoose.connection.collections['projects'].drop(function (err) {
+            if (err) throw err;
+
             var proj = {
                 name: 'test name',
                 user: login.user,
