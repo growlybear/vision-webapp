@@ -16,10 +16,11 @@ describe("GitHub API integration", function () {
             if (err) throw err;
 
             var proj = {
-                name: 'test name',
+                name: 'Test Name',
                 user: login.user,
                 token: login.token,
-                repositories: ['node-plates']
+                // NOTE need to work against a real repo with commits, ie. this one
+                repositories: ['vision-webapp']
             };
 
             mongoose.connection.collections['projects'].insert(proj, function (err, docs) {
@@ -41,6 +42,27 @@ describe("GitHub API integration", function () {
                     assert(_.has(repo, 'id'));
                     assert(_.has(repo, 'name'));
                     assert(_.has(repo, 'description'));
+
+                    done();
+                });
+        });
+    });
+
+    describe("when requesting an available resource '/project/:id/commits", function () {
+        it("should respond with 200", function (done) {
+            this.timeout(5000);
+            request(app).get('/project/' + id + '/commits')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end(function (err, res) {
+                    var commit = _.first(JSON.parse(res.text));
+
+                    assert(_.has(commit, 'message'));
+                    assert(_.has(commit, 'date'));
+                    assert(_.has(commit, 'login'));
+                    assert(_.has(commit, 'avatar_url'));
+                    assert(_.has(commit, 'ago'));
+                    assert(_.has(commit, 'repository'));
 
                     done();
                 });
