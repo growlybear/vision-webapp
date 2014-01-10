@@ -28,7 +28,8 @@
     "underscore": "~1.5.2",
     "async": "~0.2.9",
     "moment": "~2.5.0",
-    "github": "~0.1.12"
+    "github": "~0.1.12",
+    "require-directory": "~1.2.0"
   },
   "devDependencies": {
     "mocha": "~1.16.2",
