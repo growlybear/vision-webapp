@@ -42,6 +42,7 @@
     "grunt-cafe-mocha": "~0.1.10",
     "load-grunt-tasks": "~0.2.1",
     "grunt-contrib-jshint": "~0.8.0",
-    "cheerio": "~0.13.1"
+    "cheerio": "~0.13.1",
+    "bower": "~1.2.8"
   }
 }
