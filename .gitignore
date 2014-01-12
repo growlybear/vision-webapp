@@ -5,6 +5,7 @@ npm-debug.log
 coverage.html
 
 node_modules
+lib/express/public/components
 lib-cov
 logs
 reference
