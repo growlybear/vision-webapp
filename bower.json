@@ -1,0 +1,19 @@
+{
+  "name": "vision-webapp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/growlybear/vision-webapp",
+  "authors": [
+    "Michael Allan <michaelallan@optushome.com.au>"
+  ],
+  "description": "Dashboard for GitHub",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/express/public/components",
+    "test",
+    "tests"
+  ]
+}
