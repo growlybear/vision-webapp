@@ -43,6 +43,7 @@
     "load-grunt-tasks": "~0.2.1",
     "grunt-contrib-jshint": "~0.8.0",
     "cheerio": "~0.13.1",
-    "bower": "~1.2.8"
+    "bower": "~1.2.8",
+    "grunt-contrib-handlebars": "~0.6.0"
   }
 }
