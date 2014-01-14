@@ -97,7 +97,6 @@ module.exports = function(grunt) {
         // single-line conditionals for compact error-handling
         '-W116': true,
         globals: {
-          jQuery: true,
           require: true,
           __dirname: true,
           __filename: true,
@@ -105,6 +104,13 @@ module.exports = function(grunt) {
           module: true,
           exports: true,
           process: true,
+
+          jQuery: true,
+          $: true,
+          _: true,
+          Backbone: true,
+          visiontemplates: true,
+
           describe: true,
           it: true,
           before: true,
