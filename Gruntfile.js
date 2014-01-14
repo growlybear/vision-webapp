@@ -49,6 +49,16 @@ module.exports = function(grunt) {
         highlight: false
       }
     },
+    handlebars: {
+      compile: {
+        options: {
+          namespace: 'visiontemplates'
+        },
+        files: {
+          'lib/express/public/javascripts/templates.js': ['lib/express/templates/*.hbs']
+        }
+      }
+    },
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -110,6 +120,7 @@ module.exports = function(grunt) {
         src: [
           'lib/**/*.js',
           '!lib/express/public/components/**/*.js',
+          '!lib/express/public/javascripts/templates.js',
           'test/**/*.js'
         ]
       }
