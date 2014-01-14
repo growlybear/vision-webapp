@@ -2,13 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{title}}</title>
+  <title>{{ title }}</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{description}}">
-  <meta name="author" content="{{author}}">
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="{{ author }}">
+
+  <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
-  <p>Sample application by {{user}}</p>
-  <p>{{sample}}</p>
+
+  <nav id="header" class="navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-page-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h1 class="brand"><a class="home" href="#">Vision</a></h1>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-page-nav">
+      <ul class="nav navbar-nav navbar-right">
+
+        {{#if user}}
+          <li class="dropdown navbar-text">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user }} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li>
+            <a href="/auth/github" id="login"><img src="/images/github.png" alt=""></a>
+          </li>
+        {{/if}}
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="row-fluid">
+
+    {{#if user}}
+
+      <div class="col-md-3">
+        <h2>Projects</h2>
+        <ul id="projects-list" class="nav nav-list"></ul>
+        <div>
+          <a href="#add" id="showForm" class="btn btn-large btn-block btn-primary">Add project</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h2>Repositories</h2>
+        <ul id="repository-list" class="nav inline nav-list"></ul>
+      </div>
+
+      <div class="col-md-3">
+        <h2>Commits</h2>
+        <ul id="commits-list" class="media-list"></ul>
+      </div>
+
+      <div class="col-md-3">
+        <h2>Issues</h2>
+        <ul id="issue-list" class="media-list"></ul>
+      </div>
+
+    {{else}}
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+          <h1>Vision</h1>
+
+          <p>A real-time multiple-repo dashboard for GitHub issues and commits</p>
+          <small class="text-muted">
+            <a href="/auth/github" class="btn btn-large btn-primary">login</a>
+            to a valid GitHub account to use Vision
+          </small>
+
+        </div>
+      </div>
+
+    {{/if}}
+
+  </div>
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/json2/json2.js"></script>
+  <script src="/underscore/underscore-min.js"></script>
+  <script src="/backbone/backbone-min.js"></script>
+  <script src="/handlebars/handlebars.runtime.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/javascripts/templates.js"></script>
+  <script src="/javascripts/vision.js"></script>
+
 </body>
 </html>
