@@ -1,5 +1,8 @@
-<li>
-  <label for="{{ id }}" class="checkbox inline"></label>
-  <input id="{{ id }}" type="checkbox" {{ enabled }} value="{{ name }}">
-  <h4><small>{{ description }}</small></h4>
-</li>
+<div class="checkbox">
+  <label for="{{ id }}" class="checkbox inline">
+    <h4 class="media-heading repoItem">
+      <input id="{{ id }}" type="checkbox" {{ enabled }} value="{{ name }}"> {{ name }}
+    </h4>
+    <small>{{ description }}</small>
+  </label>
+</div>

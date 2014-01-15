@@ -54,6 +54,14 @@
   text-decoration: underline;
 }
 
+input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.checkbox {
+  margin: 0;
+}
+
 .nav-list button {
   margin: 3px 3px 0 0;
 }
@@ -71,11 +79,6 @@
   float: right;
   margin-left: 6px;
   margin-top: 6px;
-}
-
-input {
-  width: 202px;
-  margin-top: 10px;
 }
 
 .disabled {
